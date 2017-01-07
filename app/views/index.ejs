@@ -1,0 +1,64 @@
+<% include partials/template/head.ejs %>
+    <!-- Post Content -->
+<article>
+  <div class="container" style="margin-top: 80px;">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+        <div class="post-heading">
+          <h1>The dyslexic guide to how websites work.</h1>
+          <h2 class="subheading">Just some content.</h2>
+          <span class="meta">Posted by <a href="#">Kyle Corbin Hurst</a> Janurary 5th, 2017</span>
+        </div>
+
+        <div id="app">
+          <form>
+            <div class="input-group">
+              <lable>Title:</lable>
+              <input type="text" class="form-control" v-model="newDbRow.postTitle">
+            </div>
+
+            <div class="input-group">
+              <lable>Content:</lable>
+              <textarea class="form-control" v-model="newDbRow.postContent"></textarea>
+            </div>
+
+            <div class="input-group">
+              <lable>Author:</lable>
+              <input type="text" class="form-control" v-model="newDbRow.postAuthor">
+            </div>
+            </br>
+            <button type="button" class="btn btn-default" @click="createRow(dbRows)">
+				Create Post
+			</button>
+          </form>
+          </br>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <td><strong>post_id</strong></td>
+                <td><strong>title</strong></td>
+                <td><strong>content</strong></td>
+                <td><strong>Author</strong></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(row, index) in dbRows" :key="row">
+                <td> {{index +1}} </td>
+                <td> {{row.postTitle}} </td>
+                <td> {{row.postContent}} </td>
+                <td> {{row.postAuthor}} </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- app -->
+      </div>
+      <!-- col-lg-8 -->
+    </div>
+    <!--row -->
+  </div>
+  <!--container -->
+</article>
+
+<% include partials/template/footer.ejs %>

@@ -1,0 +1,15 @@
+{
+  "name": "dyslexic-guide",
+  "version": "1.0.0",
+  "description": "A tool that teaches people complex things through visual repressentations. ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kyle Corbin Hurst",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.5",
+    "express": "^4.14.0" 
+  }
+}
